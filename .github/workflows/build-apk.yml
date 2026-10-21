@@ -1,14 +1,17 @@
-
 name: Build PSSAB Android APK
 
 'on':
   workflow_dispatch:
-  push:
-    paths:
-      - '.github/workflows/build-apk.yml'
 
 permissions:
   contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test workflow
+        run: echo "Workflow PSSAB berhasil dijalankan"
 
 jobs:
   inspect:
