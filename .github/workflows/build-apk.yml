@@ -3,26 +3,9 @@ name: Build PSSAB Android APK
 'on':
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Test workflow
         run: echo "Workflow PSSAB berhasil dijalankan"
-
-jobs:
-  inspect:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Check uploaded project
-        run: |
-          echo "=== Files in repository ==="
-          ls -la
-          echo "=== ZIP archive ==="
-          unzip -l "PSSAB-Android-Native-Starter (1).zip" | head -n 60
